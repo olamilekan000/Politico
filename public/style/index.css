@@ -1,0 +1,139 @@
+html, body {
+	min-height: 100vh;
+}
+
+body{
+	margin: 0px;
+	padding: 0px;
+	font-family: helvetica;
+	background-color: #fff;
+	display: block;
+}
+
+header, footer{
+	background-color: #2e7d32;
+	padding: 10px;
+}
+
+header{
+	min-height: 30px;
+}
+
+footer{
+	margin-bottom: 0px;
+	min-height: 70px;
+}
+
+main{
+	min-height: 500px;
+}
+
+form, input{
+	display: block;
+	margin-top: 5px;
+}
+
+form{
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 35px;
+    min-width: 500px;
+}
+
+
+
+/*class*/
+
+.container{
+	margin: 0 auto;
+	width: 80%;
+}
+
+.center{
+	margin: auto;
+	padding: 15px;
+	width: 50%;
+}
+
+.input-field{
+	width: 100%;
+	border: none;
+	padding: 7px;
+}
+
+.logo{
+	font-size: 2rem;
+}
+
+.btn{
+	padding: 10px;
+	width: 5rem;
+	border: none;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+	background-color: #2e7d32;
+	color:#fff;
+}
+
+.btn:hover{
+	color:#2e7d32;
+	font-weight: bold;
+	background-color: #fff;
+	border: 1px solid #2e7d32;
+	transition: all 0.4s ease;
+}
+
+.btn:focus{
+	outline: 0;
+}
+
+.input-field{
+	padding-left: 10px;
+	border: none;
+	border-bottom: 1px solid #000;
+}
+
+.input-field[type=text]:focus,
+.input-field[type=password]:focus {
+	border: none;
+	outline: none;
+	border-bottom: 1px solid #2e7d32;
+	box-shadow: 0 1px 0 0 #2e7d32;
+	transition: all 1s ease;
+}
+
+
+/*ID*/
+
+#logo > span{
+	color: #fff;	
+}
+
+#logo, span{
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+#signInText{
+	text-align: center;
+	padding: 10px;
+	margin-top: 20px;
+}
+
+#signInText, span{
+	font-weight: bold;
+	font-size: 30px;
+	color: #000;	
+}
+
+#clickToViewGuberForm{
+	font-size: 0.8rem;
+	color: blue;
+}
+
+#warning, #warningGuber{
+	margin-top: 7px;
+	cursor: pointer;	
+	font-size: 0.8rem;
+	color: blue;
+	padding: 10px;
+}
