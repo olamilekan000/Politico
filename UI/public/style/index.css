@@ -75,10 +75,7 @@ form{
 }
 
 .btn:hover{
-	color:#2e7d32;
-	font-weight: bold;
-	background-color: #fff;
-	border: 1px solid #2e7d32;
+	background-color: #388e3c;
 	transition: all 0.4s ease;
 }
 
@@ -113,7 +110,7 @@ form{
 	margin-bottom: 1rem;
 }
 
-#signInText{
+#signInText, #signUpText{
 	text-align: center;
 	padding: 10px;
 	margin-top: 20px;
@@ -137,3 +134,10 @@ form{
 	color: blue;
 	padding: 10px;
 }
+
+#signInLink, #signUpLink{
+	text-align: center;
+	font-size: 12px;
+	margin-top: 10px;
+}
+
