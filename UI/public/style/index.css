@@ -52,7 +52,6 @@ ul li{
 	display: inline-block;
 }
 
-
 /*class*/
 
 .container{
@@ -156,11 +155,6 @@ ul li{
 	text-align: center;
 }
 
-.logo a{
-	text-decoration: none;
-	color: #fff;
-}
-
 /*ID*/
 
 #logo > span{
@@ -249,10 +243,6 @@ ul li{
 #dash-profile{
 	margin-left: 20px;
 	font-weight: normal;
-}
-
-#ChangePwd button{
-	width: 100px;
 }
 
 span#copyright{
