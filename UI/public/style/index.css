@@ -6,7 +6,7 @@ body{
 	margin: 0px;
 	padding: 0px;
 	font-family: helvetica;
-	background-color: #fff;
+	background-color: #f4f4f4;
 	display: block;
 }
 
@@ -16,12 +16,18 @@ header, footer{
 }
 
 header{
-	min-height: 30px;
+	margin: 0px;
+}
+
+header .container{
+	display: flex;
+	justify-content: space-between;
 }
 
 footer{
 	margin-bottom: 0px;
 	min-height: 70px;
+	padding: 20px;
 }
 
 main{
@@ -38,15 +44,20 @@ form{
     text-align: center;
     padding: 35px;
     min-width: 500px;
+    background-color: #fff;
 }
 
-
+ul li{
+	list-style: none;
+	display: inline-block;
+}
 
 /*class*/
 
 .container{
 	margin: 0 auto;
 	width: 80%;
+	padding: 10px;
 }
 
 .center{
@@ -93,16 +104,61 @@ form{
 .input-field[type=password]:focus {
 	border: none;
 	outline: none;
-	border-bottom: 1px solid #2e7d32;
+	border-bottom: 0.5px solid #2e7d32;
 	box-shadow: 0 1px 0 0 #2e7d32;
 	transition: all 1s ease;
 }
 
+.card{
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+	padding: 30px;
+	display: block;
+	background-color: #fff;
+}
+
+.card span{
+	font-size: 18px;
+}
+
+.dashboard{
+	padding: 10px;
+	margin-top: 10px;
+	min-height: 100px;
+	display: flex;
+	justify-content: space-between;
+}
+
+
+.dash-low-section{
+	margin-top: 1rem;
+	padding: 10px;
+	margin-bottom: 5rem;
+}
+
+.office{
+	width: 50%;
+	margin: auto;
+	padding: 10px;
+	display: flex;
+	justify-content: space-between;	
+}
+
+.actText{
+	margin-left: 20px;
+}
+
+.actText p{
+	/*width: 20px;*/
+}
+
+.title{
+	text-align: center;
+}
 
 /*ID*/
 
 #logo > span{
-	color: #fff;	
+	color: #fff;
 }
 
 #logo, span{
@@ -139,5 +195,58 @@ form{
 	text-align: center;
 	font-size: 12px;
 	margin-top: 10px;
+}
+
+#profile .card{
+	width: 100%;
+}
+
+#upcoming-activities{
+	width: 65%;
+	min-height: 5rem;
+}
+
+#upcoming-activities .card{
+	min-height: 5rem;
+
+}
+
+#logo{
+	width: 40%;
+	/*margin-top: -0.3rem;*/
+}
+
+#nav{
+	overflow: hidden;
+	margin-top: 0px;
+	min-height: 100%;
+}
+
+#nav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 20px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+
+#nav a:hover {
+  background-color: #fff;
+  color: #2e7d32;
+  transition: all 0.3s ease;
+
+}
+
+#dash-profile{
+	margin-left: 20px;
+	font-weight: normal;
+}
+
+span#copyright{
+	font-weight: normal;
+	margin-top: 30px !important;
 }
 
