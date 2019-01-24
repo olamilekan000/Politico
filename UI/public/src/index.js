@@ -17,7 +17,7 @@ const makeFormVisible = (form) => {
 	form.style.display = 'block';
 }
 
-window.onload = hideForm(hideGuberForm);
+hideForm(hideGuberForm);
 
 // it should hide the voters form 
 warning.onclick = () => {
@@ -37,6 +37,8 @@ btn.forEach( function(element) {
 	element.onclick = (e) => {
 		e.preventDefault()
 		// testing routing
-		window.location = 'portal.html'
+		window.location = 'dashboard.html'
 	}
 });
+
+
