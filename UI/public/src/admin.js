@@ -1,5 +1,7 @@
-const signInBtn =  document.querySelector('button')
-signInBtn.onclick = (e) => {
-	e.preventDefault()
-	window.location = 'all-parties.html'
-}
+const signInBtn =  document.querySelectorAll('button')
+signInBtn.forEach((btn)=>{
+	btn.onclick = (e) => {
+		e.preventDefault()
+		window.location = 'all-parties.html'
+	}
+})
