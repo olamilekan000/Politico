@@ -127,6 +127,7 @@ ul li{
 	min-height: 100px;
 	display: flex;
 	justify-content: space-between;
+	flex-wrap: wrap;
 }
 
 
@@ -279,3 +280,33 @@ span#copyright{
 	font-weight: normal;
 	margin-top: 30px !important;
 }
+
+#pol-office{
+	display: flex;
+	justify-content: space-between;
+}
+
+#view-candidates-pre div,
+#view-candidates-gov div,
+#view-senate div,
+#view-Minister div,
+#view-Lga div
+{
+	text-align: center;
+	width: 100%;
+}
+
+
+#apirants{
+	display: flex;
+	justify-content: space-between;	
+}
+
+#vote div{
+	text-align: center;
+	width: 100%;
+}
+
+/*#hide{
+	display: none;
+}*/
