@@ -144,17 +144,45 @@ ul li{
 }
 
 .actText{
-	margin-left: 20px;
-}
-
-.actText p{
-	/*width: 20px;*/
+	margin-left: 30px;
 }
 
 .title{
 	text-align: center;
 }
 
+<<<<<<< HEAD
+.logo a{
+	text-decoration: none;
+	color: #fff;
+}
+
+.dash-low-section>div>form{
+	width: 800px;
+	margin-left: -180px;
+}
+
+.all-parties .card .office{
+	width: 100%;
+}
+
+.all-parties{
+	width: 70%;
+	margin: auto;
+	margin-bottom: 50px;
+}
+
+.all-parties div{
+	margin: 10px;
+}
+
+.all-parties div .actText{
+	padding: 10px;
+	margin-left: 20px;
+}
+
+=======
+>>>>>>> gh-pages
 /*ID*/
 
 #logo > span{
@@ -249,4 +277,3 @@ span#copyright{
 	font-weight: normal;
 	margin-top: 30px !important;
 }
-

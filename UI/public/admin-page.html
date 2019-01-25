@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Politico</title>
+	<link rel="stylesheet" 
+	type="text/css" 
+	href="style/index.css">
+</head>
+<body>
+	<header>
+		<div class="container">
+			<div id="logo">
+				<span class="logo"><a href="dashboard.html">Politico</a></span>
+			</div>
+			<div id="nav">
+				<a href="parties.html">View Political Parties</a>
+				<a href="Aspirants.html">View Political Aspirants</a>
+			</div>
+		</div>			
+	</header>
+	<main>
+		<div class="container">
+			<div class="dashboard">
+				<div id="profile"> 
+					<div class="card">
+						<span>
+							Name:
+						</span> 
+						<span 
+							id="dash-profile"
+							>Chuks Ene
+						</span> <br>
+						<span>
+							Email:</span>
+							<span 
+								id="dash-profile"
+								>ene@us.co.ng
+							</span> <br>
+						<span>
+							Status:
+						</span> 
+						<span 
+							id="dash-profile"
+							>Admin
+						</span><br>
+					</div>					
+				</div>
+				<div id="upcoming-activities">
+					<div class="card">
+						<div class="title">
+							<span>Up-coming Events.</span>
+						</div>
+						<hr>
+						<dir>
+							<marquee>
+								<ul>
+									<li>Governorship Election coming up in Kano State...</li>
+									<li>Presidential Election results to be announced by 9pm tonight...</li>
+									<li>Governorsjip Election coming up in Edo State...</li>
+								</ul>								
+							</marquee>
+						</dir>
+					</div>
+				</div>
+			</div>
+			<div class="dash-low-section">
+					<div class="center">					
+						<div class="title">
+							<span>Create a Poltical Party</span>
+						</div>							
+						<form>
+							<input 	
+								type="text" 
+								name="name" 
+								placeholder="Party Name" 
+								class="input-field"
+							>
+							<input 
+								type="text" 
+								name="email" 
+								placeholder="E-mail" 
+								class="input-field"
+							>
+							<input 
+								type="text" 
+								name="political-party-leader-name" 
+								placeholder="Party Leader Name" 
+								class="input-field"
+							>					
+							<input 
+								type="file" 
+								name="file" 
+								placeholder="Picture" 
+								class="input-field"
+							>
+							<div class="center">
+								<button 
+									class="btn"
+									id="btn" 
+								>Create
+								</button>
+							</div>
+						</form>
+					</div>			
+			</div>
+		</div>
+	</main>
+	<footer>
+		<div class="container">
+			<span id="copyright">
+				&copy;2019
+			</span>
+		</div>
+	</footer>
+<script type="text/javascript" src="src/admin.js"></script>
+</body>
+</html>
