@@ -6,13 +6,13 @@ body{
 	margin: 0px;
 	padding: 0px;
 	font-family: helvetica;
-	background-color: #f4f4f4;
+	background-color: #fbfad3;
 	display: block;
 }
 
 header, footer{
 	background-color: #2e7d32;
-	padding: 10px;
+	margin: 0px;
 }
 
 header{
@@ -34,9 +34,9 @@ main{
 	min-height: 500px;
 }
 
-form, input{
+form input{
 	display: block;
-	margin-top: 5px;
+	margin-top: 15px;
 }
 
 form{
@@ -56,7 +56,7 @@ ul li{
 /*class*/
 
 .container{
-	margin: 0 auto;
+	margin: auto;
 	width: 80%;
 	padding: 10px;
 }
@@ -64,7 +64,11 @@ ul li{
 .center{
 	margin: auto;
 	padding: 15px;
-	width: 50%;
+	width: 100%;
+}
+
+.center button {
+	margin-top: 15px;
 }
 
 .input-field{
@@ -84,6 +88,7 @@ ul li{
 	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
 	background-color: #2e7d32;
 	color:#fff;
+	cursor: pointer;
 }
 
 .btn:hover{
@@ -112,7 +117,7 @@ ul li{
 
 .card{
 	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
-	padding: 30px;
+	padding: 20px;
 	display: block;
 	background-color: #fff;
 }
@@ -127,7 +132,7 @@ ul li{
 	min-height: 100px;
 	display: flex;
 	justify-content: space-between;
-	flex-wrap: wrap;
+/*	flex-wrap: wrap;*/
 }
 
 
@@ -140,8 +145,8 @@ ul li{
 .office{
 	width: 50%;
 	margin: auto;
-	padding: 10px;
 	display: flex;
+	padding: 10px;
 	justify-content: space-between;	
 }
 
@@ -151,6 +156,7 @@ ul li{
 
 .title{
 	text-align: center;
+	padding: 10px;
 }
 
 .logo a{
@@ -165,6 +171,7 @@ ul li{
 
 .all-parties .card .office{
 	width: 100%;
+	padding: 0px;
 }
 
 .all-parties{
@@ -180,6 +187,10 @@ ul li{
 .all-parties div .actText{
 	padding: 10px;
 	margin-left: 20px;
+}
+
+.hide{
+	animation: hideIt 3s 4.9s ease-in;
 }
 
 /*ID*/
@@ -207,21 +218,27 @@ ul li{
 
 #clickToViewGuberForm{
 	font-size: 0.8rem;
-	color: blue;
+	color: #729d39;
 }
 
 #warning, #warningGuber{
 	margin-top: 7px;
 	cursor: pointer;	
 	font-size: 0.8rem;
-	color: blue;
+	color: #729d39;
 	padding: 10px;
 }
 
-#signInLink, #signUpLink{
+#signInLink a, #signUpLink a{
 	text-align: center;
 	font-size: 12px;
-	margin-top: 10px;
+	margin-top: 15px;
+	color: #729d39;
+	text-decoration: none;
+}
+
+#signInLink{
+	margin: 15px;
 }
 
 #profile .card{
@@ -273,7 +290,15 @@ ul li{
 }
 
 #ChangePwd button{
-	width: 100px;
+	width: 100%;
+	margin-top: 15px;
+	margin-right: 0px;
+}
+
+#ChangePwd{
+	width: 50%;
+	margin: auto;
+	margin-top: 20px;
 }
 
 span#copyright{
@@ -307,6 +332,236 @@ span#copyright{
 	width: 100%;
 }
 
-/*#hide{
-	display: none;
-}*/
+#landing{
+    background-color: #2e7d32;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    animation: zeroWidth 1s 4.9s forwards;
+}
+
+#landing div h2{
+    color: #fff;
+    font-size: 7rem;
+    position: fixed;
+    margin-top: -6%;
+    margin-left: 6%;
+    letter-spacing: 10px;
+    text-align: center;
+    animation: disappear 0.4s 4.9s forwards;
+}
+
+#landing div h4{
+    color: #fff;
+    font-size: 3rem;
+    position: fixed;
+    margin-left: 9rem;
+    text-align: center;
+    animation: disappear 0.4s 4.9s forwards;
+}
+
+
+#landing div{
+    margin-top: 20%;
+    margin-bottom: 45%;
+    margin-left: 30%;
+    margin-right: 20%;
+    text-align: center;
+    animation: disappear 0.4s 4.9s forwards;
+}
+
+#img{
+	margin-top: 55px;
+}
+
+#apirants #img{
+	margin-top: 0px;
+}
+
+#apirants #img img{
+	height: 150px;
+}
+
+#features{
+	margin-top: 5rem;
+}
+
+#toggle-menu{
+	width: 50px;
+}
+
+#toggle-menu div:nth-child(1){
+	background-color: #fff;
+	height: 0.5px;
+	padding: 1px;
+	line-height: 50px;
+	padding-bottom: 10px; 
+	width: 50px;
+	margin-bottom: 10px;
+	min-height: 1px;
+	width: 70px;
+	/*position: absolute;*/
+
+}
+
+#toggle-menu div:nth-child(2){
+	background-color: #fff;
+	height: 0.5px;
+	padding: 1px;
+	line-height: 50px;
+	padding-bottom: 10px; 
+	width: 50px;
+	min-height: 30px;
+	margin-bottom: 10px;
+	width: 70px;
+	min-height: 1px;
+	/*position: absolute;*/
+
+}
+#toggle-menu div:nth-child(3){
+	background-color: #fff;
+	height: 0.5px;
+	padding: 1px;
+	line-height: 50px;
+	padding-bottom: 10px; 
+	width: 50px;
+	min-height: 30px;
+	margin-bottom: 10px;
+	width: 70px;
+	min-height: 1px;
+	/*position: absolute;*/
+
+}
+
+
+#toggle-menu{
+	padding: 10px;
+	position: absolute;
+	margin-left: 825px;
+	display: hidden;
+}
+
+
+
+@keyframes zeroWidth{
+    100%{width: 0px}
+}
+
+@keyframes disappear{
+    100%{margin-left: -1000px}
+}
+
+@keyframes hideIt{
+    100%{display: none}
+}
+
+
+@media only screen and (max-width: 1008px) {
+
+  .container{
+  	width: 90%;
+  }
+
+  .dashboard{
+  	padding: 5px;
+  	display: block;
+  }
+
+  #profile .card{
+  	width: 50%;
+  	float: left;
+  }
+
+  #upcoming-activities .card{
+  	margin-top: 8rem;
+  	width: 96%;
+  }
+
+   #upcoming-activities{
+   	width: 100%;
+   }
+
+   #dash-low-section{
+   	width: 100%;
+   }
+
+
+	#signUpForm{
+		margin-top: 20%;
+		/*width: 400%;*/
+	}
+
+ 	#toggle-menu{
+		padding: 10px;
+		margin-left: 800px;
+		height: 10px;
+	} 
+
+#nav-toggle a:nth-child(1){
+		display: block;
+		text-decoration: none;
+		margin-bottom: 50px solid white;
+		width: 100%;
+		padding: 20px;
+		background-color: #2e7d32;
+		color: #fff;
+		height: 20px;
+		text-align: center;	
+
+	}
+
+	#nav-toggle a:nth-child(2){
+		display: block;
+		text-decoration: none;
+		margin-bottom: 50px solid white;
+		width: 100%;
+		padding: 20px;
+		background-color: #2e7d32;
+		color: #fff;
+		height: 20px;
+		text-align: center;
+	}
+
+	#nav-toggle a:nth-child(3){
+		display: block;
+		text-decoration: none;
+		margin-bottom: 50px solid white;
+		width: 100%;
+		padding: 20px;
+		background-color: #2e7d32;
+		color: #fff;
+		height: 20px;
+		text-align: center;	
+	}
+
+	#nav-toggle a:nth-child(4){
+		display: block;
+		text-decoration: none;
+		margin-bottom: 50px solid white;
+		width: 100%;
+		padding: 20px;
+		background-color: #2e7d32;
+		color: #fff;
+		height: 20px;
+		text-align: center;		
+
+	}
+
+	#nav-toggle a:nth-child(1):hover{
+		background-color: #fff;
+		color: green;
+
+	}
+
+
+	#nav-toggle {
+		padding: 5px;
+		min-height: 200px;
+		position: absolute;
+		margin-left: 700px;
+		margin-top: 73px;
+	}	
+
+
+}
+
