@@ -1,5 +1,3 @@
-const signInBtn =  document.querySelectorAll('button')
-
 let toggleMenuBtn
 let navToggle
 let nav
@@ -33,9 +31,4 @@ toggleMenuBtn.onclick = () => {
 	}
 
 }
-signInBtn.forEach((btn)=>{
-	btn.onclick = (e) => {
-		e.preventDefault()
-		window.location = 'all-parties.html'
-	}
-})
+
