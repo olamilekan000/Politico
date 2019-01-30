@@ -6,7 +6,7 @@ body{
 	margin: 0px;
 	padding: 0px;
 	font-family: helvetica;
-	background-color: #fbfad3;
+	background-color: #fff;
 	display: block;
 }
 
@@ -140,6 +140,7 @@ ul li{
 	margin-top: 1rem;
 	padding: 10px;
 	margin-bottom: 5rem;
+	width: 100%;
 }
 
 .office{
@@ -154,6 +155,15 @@ ul li{
 	margin-left: 30px;
 }
 
+.actText p {
+	text-align: wrap;
+}
+
+.actText div{
+	font-size: 12px;
+	float: right;
+}
+
 .title{
 	text-align: center;
 	padding: 10px;
@@ -165,8 +175,12 @@ ul li{
 }
 
 .dash-low-section>div>form{
-	width: 800px;
-	margin-left: -180px;
+	width: 10%;
+}
+
+.dash-low-section{
+	display: flex;
+	justify-content: space-between;
 }
 
 .all-parties .card .office{
@@ -246,8 +260,9 @@ ul li{
 }
 
 #upcoming-activities{
-	width: 65%;
-	min-height: 5rem;
+	width: 100%;
+	min-height: 10rem;
+	margin-bottom: 60px;
 }
 
 #upcoming-activities .card{
@@ -264,6 +279,7 @@ ul li{
 	overflow: hidden;
 	margin-top: 0px;
 	min-height: 100%;
+	width: 100%;
 }
 
 #nav a {
@@ -301,9 +317,11 @@ ul li{
 	margin-top: 20px;
 }
 
-span#copyright{
+#copyright{
 	font-weight: normal;
 	margin-top: 30px !important;
+	text-align: center;
+	color: #fff;
 }
 
 #pol-office{
@@ -321,6 +339,17 @@ span#copyright{
 	width: 100%;
 }
 
+#view-candidates-pre{
+	margin-top: 30px;
+}
+
+#seat{
+	width: 50%;
+}
+
+#Pending > button{
+	width: 100%;
+}
 
 #apirants{
 	display: flex;
@@ -441,6 +470,9 @@ span#copyright{
 	display: hidden;
 }
 
+#hr{
+	width: 60%;
+}
 
 
 @keyframes zeroWidth{

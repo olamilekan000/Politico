@@ -1,5 +1,3 @@
-const signInBtn =  document.querySelectorAll('button')
-
 let toggleMenuBtn
 let navToggle
 let nav
@@ -33,15 +31,13 @@ toggleMenuBtn.onclick = () => {
 	}
 
 }
-signInBtn.forEach((btn)=>{
-	btn.onclick = (e) => {
-		e.preventDefault()
-		window.location = 'all-parties.html'
-	}
-})
 
-const pending = document.getElementById('Pending');
-Pending.addEventListener('click', (e) => {
-	e.preventDefault()
-	window.location = 'pending.html'
-})
+
+const btn = document.querySelectorAll('button#profile')
+btn.forEach( function(element) {
+	element.onclick = (e) => {
+		e.preventDefault()
+		// testing routing
+		window.location = 'profile-page.html'
+	}
+});

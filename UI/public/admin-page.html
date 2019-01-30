@@ -24,6 +24,7 @@
 				<a href="parties.html">Political Parties</a>
 				<a href="Aspirants.html">Political Aspirants</a>
 				<a href="admin-page.html">Admin</a>
+				<a href="sign-in.html">Sign Out</a>
 			</div>			
 
 			<div id="nav">
@@ -31,6 +32,7 @@
 				<a href="parties.html">Political Parties</a>
 				<a href="Aspirants.html">Political Aspirants</a>
 				<a href="admin-page.html">Admin</a>
+				<a href="sign-in.html">Sign Out</a>
 			</div>
 		</div>			
 	</header>
@@ -55,33 +57,20 @@
 						<span>
 							Status:
 						</span> 
-						<span 
+					<span 
 							id="dash-profile"
 							>Admin
 						</span><br>
 					</div>					
 				</div>
-				<div id="upcoming-activities">
-					<div class="card">
-						<div class="title">
-							<span>Up-coming Events.</span>
-						</div>
-						<hr>
-						<dir>
-							<marquee>
-								<ul>
-									<li>Governorship Election coming up in Kano State...</li>
-									<li>Presidential Election results to be announced by 9pm tonight...</li>
-									<li>Governorsjip Election coming up in Edo State...</li>
-								</ul>								
-							</marquee>
-						</dir>
-					</div>
+				<div id="Pending">
+					<button class="btn">Pending Approval(s)</button>
 				</div>
 			</div>
 			<div class="dash-low-section">
+
 				<div id="voters">
-					<div class="center">					
+					<div class="">					
 						<div class="title">
 							<span>Create a Poltical Party</span>
 						</div>							
@@ -105,9 +94,9 @@
 								class="input-field"
 							>					
 							<input 
-								type="file" 
-								name="file" 
-								placeholder="Picture" 
+								type="text" 
+								name="partyDescription" 
+								placeholder="Party Description" 
 								class="input-field"
 							>
 							<div class="center">
@@ -122,7 +111,7 @@
 				</div>
 
 				<div id="voters">
-					<div class="center">					
+					<div class="">					
 						<div class="title">
 							<span>Create a Poltical Office</span>
 						</div>							
@@ -144,7 +133,13 @@
 								name="aspirant-party" 
 								placeholder="Aspirant's party" 
 								class="input-field"
-							>							
+							>
+							<input 
+								type="text" 
+								name="aspirant-profile" 
+								placeholder="Aspirant Profile" 
+								class="input-field"
+							>									
 							<div class="center">
 								<button 
 									class="btn"
@@ -154,10 +149,18 @@
 							</div>
 						</form>
 					</div>					
-				</div>											
+				</div>	
+
 			</div>
 		</div>
 	</main>
+	<footer>
+		<div class="container">
+			<div id="copyright">
+				&copy;2019 Politically stable inc.
+			</div>
+		</div>
+	</footer>	
 <script type="text/javascript" src="src/admin.js"></script>
 </body>
 </html>

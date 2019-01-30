@@ -1,9 +1,5 @@
-// guber-candidate form
-const hideGuberForm = document.getElementById("guberCandiForm");
 // warning in guber candiadte form
 const warningGuber = document.getElementById("warningGuber");
-// warning in the voters form
-const warning = document.getElementById("warning");
 // voters' form
 const votersForm = document.getElementById("voters");
 
@@ -17,17 +13,8 @@ const makeFormVisible = (form) => {
 	form.style.display = 'block';
 }
 
-hideForm(hideGuberForm);
-
-// it should hide the voters form 
-warning.onclick = () => {
-	hideForm(votersForm);
-	makeFormVisible(hideGuberForm);
-}
-
 // it should make the voters from visible
 warningGuber.onclick = () => {
-	hideForm(hideGuberForm);
 	makeFormVisible(votersForm);
 }
 
