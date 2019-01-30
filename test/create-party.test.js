@@ -62,7 +62,7 @@ describe('/create_party ', () => {
     });
   });
   describe('trys to create a political party', () => {
-    it('fails to because their is no auth token', (done) => {
+    it('fails to because there is no auth token', (done) => {
       chai.request(app)
         .post(`${BASE_URL}/create-party`)
         .set('content-type', 'application/json')
@@ -78,7 +78,7 @@ describe('/create_party ', () => {
     });
   });
   describe('trys to create a political party', () => {
-    it('fails to because a wrong token was used', (done) => {
+    it('fails to create because a wrong token was used', (done) => {
       chai.request(app)
         .post(`${BASE_URL}/create-party`)
         .set('content-type', 'application/json')

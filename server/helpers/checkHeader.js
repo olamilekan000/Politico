@@ -2,7 +2,6 @@ export const checkHeader = (req, res, next) => {
   const tokenFromHeader = req.get('Authorization');
   if (tokenFromHeader !== 'admin') {
     res.status(401).json({
-      status: 401,
       error: 'You don not have the access to create a party',
     });
     return;
@@ -16,7 +15,6 @@ export const checkIfUserOrAdmin = (req, res, next) => {
     next();
   } else {
     res.status(401).json({
-      status: 401,
       error: 'You don not have the access to view all parties.',
     });
   }
