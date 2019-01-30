@@ -11,4 +11,7 @@ router.route('/create-party')
 router.route('/get-parties')
   .get(checkIfUserOrAdmin, Controllers.getAllPoliticalParties);
 
+router.route('/get-party/:id')
+  .put(checkHeader, Controllers.editAParty);
+
 export default router;

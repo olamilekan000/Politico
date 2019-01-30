@@ -72,7 +72,7 @@ describe('/create_party ', () => {
           res.should.have.status(401);
           should.exist(res.body.error);
           res.type.should.equal('application/json');
-          res.body.error.should.be.eql('You don not have the access to create a party');
+          res.body.error.should.be.eql('You do not have the access to perform this action');
           done();
         });
     });
@@ -88,7 +88,7 @@ describe('/create_party ', () => {
           res.should.have.status(401);
           should.exist(res.body.error);
           res.type.should.equal('application/json');
-          res.body.error.should.be.eql('You don not have the access to create a party');
+          res.body.error.should.be.eql('You do not have the access to perform this action');
           done();
         });
     });
