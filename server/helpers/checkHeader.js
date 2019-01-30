@@ -1,6 +1,5 @@
-const checkHeader = (req, res, next) => {
+export const checkHeader = (req, res, next) => {
   const tokenFromHeader = req.get('Authorization');
-  console.log(tokenFromHeader);
   if (tokenFromHeader !== 'admin') {
     res.status(401).json({
       status: 401,
@@ -11,4 +10,14 @@ const checkHeader = (req, res, next) => {
   next();
 };
 
-export default checkHeader;
+export const checkIfUserOrAdmin = (req, res, next) => {
+  const tokenFromHeader = req.get('Authorization');
+  if (tokenFromHeader === 'user' || tokenFromHeader === 'admin') {
+    next();
+  } else {
+    res.status(401).json({
+      status: 401,
+      error: 'You don not have the access to view all parties.',
+    });
+  }
+};

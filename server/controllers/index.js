@@ -16,7 +16,15 @@ export default class Controllers {
     const newCreatedParties = [...parties, req.body];
     res.status(200).json({
       status: 200,
-      message: 'Political Party Successfully created'
+      message: 'Political Party Successfully created',
+      data: newCreatedParties,
+    });
+  }
+
+  static getAllPoliticalParties(req, res) {
+    res.status(200).json({
+      status: 200,
+      data: parties,
     });
   }
 }
