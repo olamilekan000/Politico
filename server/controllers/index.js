@@ -8,14 +8,12 @@ export default class Controllers {
     } = req.body;
     if (!name || !partyEmail || !hqAddress || !partyDescr || !partyLeadersName) {
       res.status(400).json({
-        status: 400,
         error: 'Sorry, You need to enter details properly.',
       });
       return;
     }
     const newCreatedParties = [...parties, req.body];
     res.status(200).json({
-      status: 200,
       message: 'Political Party Successfully created',
       data: newCreatedParties,
     });
@@ -23,7 +21,6 @@ export default class Controllers {
 
   static getAllPoliticalParties(req, res) {
     res.status(200).json({
-      status: 200,
       data: parties,
     });
   }
