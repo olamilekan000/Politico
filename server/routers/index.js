@@ -21,6 +21,9 @@ router.route('/create-office')
   .post(checkHeader, Controllers.createOffice);
 
 router.route('/all-offices')
-  .get(checkIfUserOrAdmin, Controllers.allOffices);  
+  .get(checkIfUserOrAdmin, Controllers.allOffices);
+
+router.route('/an-office/:id')
+  .get(checkIfUserOrAdmin, Controllers.anOffice);
 
 export default router;
