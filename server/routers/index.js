@@ -14,4 +14,7 @@ router.route('/get-parties')
 router.route('/get-party/:id')
   .put(checkHeader, Controllers.editAParty);
 
+router.route('/delete/:id')
+  .delete(checkHeader, Controllers.deleteAParty);
+
 export default router;
