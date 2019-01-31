@@ -17,4 +17,7 @@ router.route('/get-party/:id')
 router.route('/delete/:id')
   .delete(checkHeader, Controllers.deleteAParty);
 
+router.route('/create-office')
+  .post(checkHeader, Controllers.createOffice);
+
 export default router;
