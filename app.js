@@ -21,7 +21,7 @@ app.use(BASE_URL, router);
 const PORT = process.env.PORT || 8089;
 
 app.listen(PORT, () => {
-  console.log(`Now listening for requests on port ${PORT}`);
+  consoleLog(`Now listening for requests on port ${PORT}`);
 });
 
 export default app;
