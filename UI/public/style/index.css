@@ -52,6 +52,12 @@ ul li{
 	display: inline-block;
 }
 
+span a{
+	margin-top: 20px;
+	font-size: 15px;
+	color: #000;
+}
+
 
 /*class*/
 
@@ -208,6 +214,10 @@ ul li{
 }
 
 /*ID*/
+
+span#BecomeCandidate{
+	margin-top: 20px;
+}
 
 #logo > span{
 	color: #fff;

@@ -4,9 +4,10 @@
   "description": "A political web portal",
   "main": "app.js",
   "scripts": {
-    "test": "NODE_ENV=test & mocha --require @babel/register test/*.js --exit",
+    "test": "nyc --reporter=html --reporter=text mocha --require @babel/register test/*.js --exit",
     "start": "nodemon --exec babel-node app.js",
-    "lint": "eslint --fix app.js"
+    "lint": "eslint --fix app.js ./server",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
@@ -35,9 +36,11 @@
     "@babel/register": "^7.0.0",
     "chai": "^4.2.0",
     "chai-http": "^4.2.1",
+    "coveralls": "^3.0.2",
     "eslint": "^5.12.1",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.15.0",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0"
   }
 }
