@@ -1,19 +1,13 @@
 export const rightOffice = 	{
   type: 'Federal',
-  name: 'Senator',
-  aspirantName: 'Segun Odigbemi',
-  aspirantParty: "People's Congress",
+  name: 'Senator'
 };
 
-export const notTooRight = 	{
+export const notTooRightOffice = 	{
   type: '   ',
-  name: 'Senator',
-  aspirantName: 'Segun Odigbemi',
-  aspirantParty: "People's Congress",
+  name: 'Senator'
 };
 
-export const notRight = {
+export const notRightOffice = {
   name: 'Senator',
-  aspirantName: 'Segun Odigbemi',
-  aspirantParty: "People's Congress",
 };

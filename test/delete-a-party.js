@@ -13,7 +13,7 @@ const BASE_URL = '/api/v1';
 describe('Delete a party', () => {
   it('checks if an Admin can delete a party', (done) => {
     chai.request(app)
-      .delete(`${BASE_URL}/delete/1`)
+      .delete(`${BASE_URL}/parties/1`)
       .set('content-type', 'applicaction/json')
       .set('Authorization', 'admin')
       .end((err, res) => {
@@ -26,7 +26,7 @@ describe('Delete a party', () => {
   });
   it('checks if an Admin can delete a party', (done) => {
     chai.request(app)
-      .delete(`${BASE_URL}/delete/1`)
+      .delete(`${BASE_URL}/parties/1`)
       .set('content-type', 'applicaction/json')
       .set('Authorization', '')
       .end((err, res) => {

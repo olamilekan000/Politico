@@ -15,7 +15,7 @@ describe('Only an Admin can edit a party ', () => {
   describe('A party can be edited', () => {
     it('edits a political party if the user is Admin', (done) => {
       chai.request(app)
-        .put(`${BASE_URL}/get-party/1`)
+        .put(`${BASE_URL}/parties/1`)
         .set('content-type', 'application/json')
         .set('Authorization', 'admin')
         .send(properlyFilled)
@@ -31,7 +31,7 @@ describe('Only an Admin can edit a party ', () => {
   describe('Handling bad request from the Admin', () => {
     it('throws an error if the Admin enters a bad request', (done) => {
       chai.request(app)
-        .put(`${BASE_URL}/get-party/2`)
+        .put(`${BASE_URL}/parties/2`)
         .set('content-type', 'application/json')
         .set('Authorization', 'admin')
         .send(inCorrectlyFilled)
@@ -46,7 +46,7 @@ describe('Only an Admin can edit a party ', () => {
   describe('Handling bad request from the Admin and Users', () => {
     it('throws an error if the Admin trys to edit a user that does not exit', (done) => {
       chai.request(app)
-        .put(`${BASE_URL}/get-party/10`)
+        .put(`${BASE_URL}/parties/10`)
         .set('content-type', 'application/json')
         .set('Authorization', 'admin')
         .send(properlyFilled)
@@ -61,7 +61,7 @@ describe('Only an Admin can edit a party ', () => {
   describe('Handling Un authorized Users', () => {
     it('throws an error an un authorized user trys to edit a user', (done) => {
       chai.request(app)
-        .put(`${BASE_URL}/get-party/1`)
+        .put(`${BASE_URL}/parties/1`)
         .set('content-type', 'application/json')
         .set('Authorization', '')
         .send(properlyFilled)
