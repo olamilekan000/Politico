@@ -59,4 +59,13 @@ export default class Controllers {
       error: 'The Political Party does not exist',
     });
   }
+
+  static deleteAParty(req, res) {
+    const { id } = req.params;
+    const remData = parties.filter(party => parseInt(id, 10) !== party.id);
+    res.status(200).json({
+      message: 'Successfully Deleted a party',
+      data: remData,
+    });
+  }
 }
