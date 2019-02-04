@@ -3,7 +3,7 @@ export const correctParty = {
   partyEmail: 'youngonesshallconquer@yougins.we',
   hqAddress: 'Abuja',
   logoUrl: 'jdkjkeluheuikhffefef.jpg',
-  partyDescr: 'A party for the youths... The young shall grow!',
+  partyDescription: 'A party for the youths... The young shall grow!',
   partyLeadersName: 'Yaro Bala',
 };
 
@@ -12,7 +12,7 @@ export const inCorrectParty1 = {
   partyEmail: 'youngonesshallconquer@yougins.we',
   hqAddress: 'Abuja',
   logoUrl: 'jdkjkeluheuikhffefef.jpg',
-  partyDescr: 'A party for the youths... The young shall grow!',
+  partyDescription: 'A party for the youths... The young shall grow!',
 };
 
 export const inCorrectParty2 = {

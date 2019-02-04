@@ -1,25 +1,11 @@
 import parties from '../mock-Models/create.mock';
-import ofiice from '../mock-Models/create-office.mock';
+import { validatePartiesInput } from '../helpers/validators';
 
-export default class Controllers {
+export default class Parties {
   static createParty(req, res) {
     req.body.id = parties.length + 1;
     try {
-      const {
-        name, partyEmail, hqAddress, partyDescr, partyLeadersName,
-      } = req.body;
-
-      if (!name.trim()
-          || !partyEmail.trim()
-          || !hqAddress.trim()
-          || !partyDescr.trim()
-          || !partyLeadersName.trim()) {
-        res.status(400).json({
-          error: 'Sorry, You need to enter details properly.',
-        });
-        return;
-      }
-
+      validatePartiesInput(req, res);
       const newCreatedParties = [...parties, req.body];
       res.status(200).json({
         message: 'Political Party Successfully created',
@@ -48,21 +34,7 @@ export default class Controllers {
 
   static editAParty(req, res) {
     try {
-      const {
-        name, partyEmail, hqAddress, partyDescr, partyLeadersName,
-      } = req.body;
-
-      if (!name.trim()
-        || !partyEmail.trim()
-        || !hqAddress.trim()
-        || !partyDescr.trim()
-        || !partyLeadersName.trim()) {
-        res.status(400).json({
-          error: 'Sorry, You need to enter details properly.',
-        });
-        return;
-      }
-
+      validatePartiesInput(req, res);
       const { id } = req.params;
       let data = parties.find(element => element.id === parseInt(id, 10));
 
@@ -94,74 +66,6 @@ export default class Controllers {
       res.status(200).json({
         message: 'Successfully Deleted a party',
         data: remData,
-      });
-    } catch (e) {
-      // statements
-      res.status(500).json({
-        error: 'Sorry, Something is not right.',
-      });
-    }
-  }
-
-  static createOffice(req, res) {
-    req.body.id = ofiice.length + 1;
-    try {
-      // statements
-      const {
-        type, name, aspirantName, aspirantParty,
-      } = req.body;
-      if (!type.trim()
-          || !name.trim()
-          || !aspirantName.trim()
-          || !aspirantParty.trim()) {
-        res.status(400).json({
-          error: 'Sorry, You need to enter details properly.',
-        });
-        return;
-      }
-
-      const newCreatedOffice = [...ofiice, req.body];
-      res.status(200).json({
-        message: 'Political Office Successfully created',
-        data: newCreatedOffice,
-      });
-    } catch (e) {
-      // statements
-      res.status(500).json({
-        error: 'Sorry, Something is not right.',
-      });
-    }
-  }
-
-  static allOffices(req, res) {
-    try {
-      // statements
-      res.status(200).json({
-        data: ofiice,
-      });
-    } catch (e) {
-      // statements
-      res.status(500).json({
-        error: 'Sorry, Something is not right.',
-      });
-    }
-  }
-
-  static anOffice(req, res) {
-    try {
-      // statements
-      const { id } = req.params;
-      const data = ofiice.find(element => element.id === parseInt(id, 10));
-
-      if (data) {
-        res.status(200).json({
-          data,
-        });
-        return;
-      }
-
-      res.status(404).json({
-        error: "The Office doen't exit",
       });
     } catch (e) {
       // statements

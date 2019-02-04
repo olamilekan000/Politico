@@ -1,29 +1,30 @@
 import { Router } from 'express';
-import Controllers from '../controllers';
+import Parties from '../controllers';
+import Offices from '../controllers/offices';
 
 import { checkHeader, checkIfUserOrAdmin } from '../helpers/checkHeader';
 
 const router = Router();
 
-router.route('/create-party')
-  .post(checkHeader, Controllers.createParty);
+router.route('/parties')
+  .post(checkHeader, Parties.createParty);
 
-router.route('/get-parties')
-  .get(checkIfUserOrAdmin, Controllers.getAllPoliticalParties);
+router.route('/parties')
+  .get(checkIfUserOrAdmin, Parties.getAllPoliticalParties);
 
-router.route('/get-party/:id')
-  .put(checkHeader, Controllers.editAParty);
+router.route('/parties/:id')
+  .put(checkHeader, Parties.editAParty);
 
-router.route('/delete/:id')
-  .delete(checkHeader, Controllers.deleteAParty);
+router.route('/parties/:id')
+  .delete(checkHeader, Parties.deleteAParty);
 
-router.route('/create-office')
-  .post(checkHeader, Controllers.createOffice);
+router.route('/Offices')
+  .post(checkHeader, Offices.createOffice);
 
-router.route('/all-offices')
-  .get(checkIfUserOrAdmin, Controllers.allOffices);
+router.route('/Offices')
+  .get(checkIfUserOrAdmin, Offices.allOffices);
 
-router.route('/an-office/:id')
-  .get(checkIfUserOrAdmin, Controllers.anOffice);
+router.route('/Offices/:id')
+  .get(checkIfUserOrAdmin, Offices.anOffice);
 
 export default router;
