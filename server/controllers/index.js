@@ -22,6 +22,7 @@ export default class Controllers {
   static getAllPoliticalParties(req, res) {
     res.status(200).json({
       data: parties,
+      message: 'Political Party Successfully created'
     });
   }
 }
