@@ -47,7 +47,7 @@ describe('/get-parties GET all parties', () => {
         .end((err, res) => {
           res.should.have.status(401);
           res.type.should.equal('application/json');
-          res.body.error.should.be.eql('You don not have the access to view all parties.');
+          res.body.error.should.be.eql('You do not have the access to this resource.');
           done();
         });
     });
@@ -60,7 +60,7 @@ describe('/get-parties GET all parties', () => {
         .end((err, res) => {
           res.should.have.status(401);
           res.type.should.equal('application/json');
-          res.body.error.should.be.eql('You don not have the access to view all parties.');
+          res.body.error.should.be.eql('You do not have the access to this resource.');
           done();
         });
     });

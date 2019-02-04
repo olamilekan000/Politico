@@ -6,7 +6,11 @@ export default class Controllers {
     const {
       name, partyEmail, hqAddress, partyDescr, partyLeadersName,
     } = req.body;
-    if (!name || !partyEmail || !hqAddress || !partyDescr || !partyLeadersName) {
+    if (!name.trim()
+        || !partyEmail.trim()
+        || !hqAddress.trim()
+        || !partyDescr.trim()
+        || !partyLeadersName.trim()) {
       res.status(400).json({
         error: 'Sorry, You need to enter details properly.',
       });
@@ -23,6 +27,36 @@ export default class Controllers {
     res.status(200).json({
       data: parties,
       message: 'Political Party Successfully created'
+    });
+  }
+
+  static editAParty(req, res) {
+    const {
+      name, partyEmail, hqAddress, partyDescr, partyLeadersName,
+    } = req.body;
+    if (!name.trim()
+      || !partyEmail.trim()
+      || !hqAddress.trim()
+      || !partyDescr.trim()
+      || !partyLeadersName.trim()) {
+      res.status(400).json({
+        error: 'Sorry, You need to enter details properly.',
+      });
+      return;
+    }
+    const { id } = req.params;
+    let data = parties.find(element => element.id === parseInt(id, 10));
+    if (data) {
+      data = req.body;
+      data.id = id;
+      res.status(200).json({
+        message: 'User Successfully Updated',
+        data,
+      });
+      return;
+    }
+    res.status(404).json({
+      error: 'The Political Party does not exist',
     });
   }
 }
