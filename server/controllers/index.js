@@ -37,8 +37,8 @@ export default class Controllers {
       // statements
       res.status(200).json({
         data: parties,
-      });      
-    } catch(e) {
+      });
+    } catch (e) {
       // statements
       res.status(500).json({
         error: 'Sorry, Something is not right.',
@@ -138,8 +138,32 @@ export default class Controllers {
       // statements
       res.status(200).json({
         data: ofiice,
-      });      
-    } catch(e) {
+      });
+    } catch (e) {
+      // statements
+      res.status(500).json({
+        error: 'Sorry, Something is not right.',
+      });
+    }
+  }
+
+  static anOffice(req, res) {
+    try {
+      // statements
+      const { id } = req.params;
+      const data = ofiice.find(element => element.id === parseInt(id, 10));
+
+      if (data) {
+        res.status(200).json({
+          data,
+        });
+        return;
+      }
+
+      res.status(404).json({
+        error: "The Office doen't exit",
+      });
+    } catch (e) {
       // statements
       res.status(500).json({
         error: 'Sorry, Something is not right.',
