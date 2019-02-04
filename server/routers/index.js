@@ -20,4 +20,7 @@ router.route('/delete/:id')
 router.route('/create-office')
   .post(checkHeader, Controllers.createOffice);
 
+router.route('/all-offices')
+  .get(checkIfUserOrAdmin, Controllers.allOffices);  
+
 export default router;

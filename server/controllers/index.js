@@ -33,10 +33,17 @@ export default class Controllers {
   }
 
   static getAllPoliticalParties(req, res) {
-    res.status(200).json({
-      data: parties,
-      message: 'Political Party Successfully created'
-    });
+    try {
+      // statements
+      res.status(200).json({
+        data: parties,
+      });      
+    } catch(e) {
+      // statements
+      res.status(500).json({
+        error: 'Sorry, Something is not right.',
+      });
+    }
   }
 
   static editAParty(req, res) {
@@ -119,6 +126,20 @@ export default class Controllers {
         data: newCreatedOffice,
       });
     } catch (e) {
+      // statements
+      res.status(500).json({
+        error: 'Sorry, Something is not right.',
+      });
+    }
+  }
+
+  static allOffices(req, res) {
+    try {
+      // statements
+      res.status(200).json({
+        data: ofiice,
+      });      
+    } catch(e) {
       // statements
       res.status(500).json({
         error: 'Sorry, Something is not right.',
