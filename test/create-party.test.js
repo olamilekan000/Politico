@@ -16,7 +16,7 @@ describe('/create_party ', () => {
   describe('create a political party', () => {
     it('creates a political party giving the correct data', (done) => {
       chai.request(app)
-        .post(`${BASE_URL}/create-party`)
+        .post(`${BASE_URL}/parties`)
         .set('content-type', 'application/json')
         .set('Authorization', AUTH)
         .send(correctParty)
@@ -32,7 +32,7 @@ describe('/create_party ', () => {
   describe('trys to create a political party', () => {
     it('fails to create a political party', (done) => {
       chai.request(app)
-        .post(`${BASE_URL}/create-party`)
+        .post(`${BASE_URL}/parties`)
         .set('content-type', 'application/json')
         .set('Authorization', AUTH)
         .send(inCorrectParty1)
@@ -48,7 +48,7 @@ describe('/create_party ', () => {
   describe('trys to create a political party', () => {
     it('fails to create a political due to empty strings and incomplete data', (done) => {
       chai.request(app)
-        .post(`${BASE_URL}/create-party`)
+        .post(`${BASE_URL}/parties`)
         .set('content-type', 'application/json')
         .set('Authorization', AUTH)
         .send(inCorrectParty2)
@@ -64,7 +64,7 @@ describe('/create_party ', () => {
   describe('trys to create a political party', () => {
     it('fails to create because there is no auth token', (done) => {
       chai.request(app)
-        .post(`${BASE_URL}/create-party`)
+        .post(`${BASE_URL}/parties`)
         .set('content-type', 'application/json')
         .set('Authorization', '')
         .send(correctParty)
@@ -80,7 +80,7 @@ describe('/create_party ', () => {
   describe('trys to create a political party', () => {
     it('fails to create because a wrong token was used', (done) => {
       chai.request(app)
-        .post(`${BASE_URL}/create-party`)
+        .post(`${BASE_URL}/parties`)
         .set('content-type', 'application/json')
         .set('Authorization', 'user')
         .send(correctParty)
