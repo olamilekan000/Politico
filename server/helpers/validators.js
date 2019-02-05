@@ -8,7 +8,7 @@ export const validatePartiesInput = (req, res) => {
   || !hqAddress.trim()
   || !partyDescription.trim()
   || !partyLeadersName.trim()) {
-    res.status(400).json({
+    return res.status(400).json({
       error: 'Sorry, You need to enter details properly.',
     });
   }
@@ -20,7 +20,7 @@ export const validateOfficesInput = (req, res) => {
   } = req.body;
   if (!type.trim()
       || !name.trim()) {
-    res.status(400).json({
+    return res.status(400).json({
       error: 'Sorry, You need to enter details properly.',
     });
   }

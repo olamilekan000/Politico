@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import Parties from '../controllers';
 import Offices from '../controllers/offices';
+import signUpUser from '../controllers/signup';
 
 import { checkHeader, checkIfUserOrAdmin } from '../helpers/checkHeader';
 
@@ -26,5 +27,8 @@ router.route('/Offices')
 
 router.route('/Offices/:id')
   .get(checkIfUserOrAdmin, Offices.anOffice);
+
+router.route('/auth/signup')
+  .post(signUpUser.register);
 
 export default router;

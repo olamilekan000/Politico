@@ -74,5 +74,5 @@ describe('Only an Admin and user can get an office ', () => {
           done();
         });
     });
-  });  
+  });
 });
