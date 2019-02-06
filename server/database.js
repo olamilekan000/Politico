@@ -29,7 +29,6 @@ const createTables = async () => {
 
 		await pool.query({
 			text:`INSERT INTO users(
-				id,
 				firstname,
 				lastname,
 				othername,
@@ -38,19 +37,23 @@ const createTables = async () => {
 				passporturl,
 				isadmin,
 				password
-			)VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9)`,
+			)VALUES($1, $2, $3, $4, $5, $6, $7, $8)`,
 			values:[
-				56,
 				'Tola',
 				'Anidi',
 				'Chigoze',
-				'chiz98@gmail.com',
+				'chiz985@gmail.com',
 				'08089562392',
 				' https://pbs.twimg.com/profile_images/852874627181367297/BhCGvY6d_200x200.jpg',
 				true,
 				'2b$10$evI4zw9a9jEdi1asKQEV3eyP7DlZCyuvw7UXMDZPJVWgMDAoiS.S.'
 			]
-		})		
+		})
+
+		await pool.query({
+			text: `DELETE FROM users WHERE email=$1`,
+			values:['chiz985@gmail.com']
+		})				
 
 		await pool.end();		
 	} catch(e) {
