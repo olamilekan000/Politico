@@ -1,5 +1,6 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
+import createTables from '../server/database'
 
 import app from '../app';
 import { properlyFilled, inCorrectlyFilled, badlyFilled } from './mock-data/mock-edit-party.test';
@@ -12,6 +13,9 @@ const { expect } = chai;
 const BASE_URL = '/api/v1';
 
 describe('Only an Admin can edit a party ', () => {
+  before(async () => {
+    await createTables()
+  })  
   describe('A party can be edited', () => {
     it('edits a political party if the user is Admin', (done) => {
       chai.request(app)

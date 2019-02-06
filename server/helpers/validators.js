@@ -8,7 +8,7 @@ export const validatePartiesInput = (req, res) => {
   || !hqAddress.trim()
   || !partyDescription.trim()
   || !partyLeadersName.trim()) {
-    return true
+    return true;
   }
 };
 
@@ -18,6 +18,6 @@ export const validateOfficesInput = (req, res) => {
   } = req.body;
   if (!type.trim()
       || !name.trim()) {
-    return true
+    return true;
   }
 };

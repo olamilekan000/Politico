@@ -41,4 +41,14 @@ export default class DbQuery {
     };
     return query;
   }
+
+
+  static getUserWithID(id) {
+    const query = {
+      text: 'SELECT * FROM users WHERE id=$1',
+      values: [id],
+    };
+    return query;
+  }
+
 }

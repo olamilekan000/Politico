@@ -1,6 +1,7 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import app from '../app';
+import createTables from '../server/database'
 
 import { rightOffice, notTooRightOffice, notRightOffice } from './mock-data/create-office.test';
 
@@ -10,6 +11,11 @@ const should = chai.should();
 const { expect } = chai;
 
 const BASE_URL = '/api/v1';
+
+
+before(async () => {
+  await createTables()
+})
 
 describe('/create-office POST', () => {
   describe('Admin can create an office', () => {

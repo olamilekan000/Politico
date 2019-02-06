@@ -1,9 +1,10 @@
 import { Router } from 'express';
+import passport from 'passport';
 import Parties from '../controllers';
 import Offices from '../controllers/offices';
 import signUpUser from '../controllers/signup';
 import signInUser from '../controllers/signin';
-import passport from 'passport';
+import RegisterCandidate from '../controllers/registerCandidate'
 
 import { checkHeader, checkIfUserOrAdmin } from '../helpers/checkHeader';
 
@@ -34,6 +35,9 @@ router.route('/auth/signup')
   .post(signUpUser.register);
 
 router.route('/auth/login')
-  .post(passport.authenticate('local', { session: false }), signInUser.signin);  
+  .post(passport.authenticate('local', { session: false }), signInUser.signin);
+
+router.route('/office/:user_id/register')
+  .post(passport.authenticate('jwt', { session: false }), RegisterCandidate.RegisterOffice);  
 
 export default router;

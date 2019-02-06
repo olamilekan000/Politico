@@ -18,7 +18,6 @@ passport.use(new JWTStrategy({
 		const user = await DbQuery.getUserWithEmail(payload.email)
 		let dbRes = await pool.query(user);
 		await pool.end();
-		console.log(dbRes.rows[0])
 		if(dbRes.rows[0]){
 			return done(null, dbRes.rows[0]);
 		}else{

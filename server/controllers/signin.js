@@ -14,10 +14,10 @@ export default class signInUser {
     );
 
     res.status(200).json({
-      status: "Successfully logged in",
+      status: 'Successfully logged in',
       data: [{
         Token,
-        "user": {
+        user: {
           id: req.user.id,
           firstname: req.user.firstname,
           lastname: req.user.lastname,
@@ -25,9 +25,9 @@ export default class signInUser {
           email: req.user.email,
           phonenumber: req.user.phonenumber,
           passporturl: req.user.passporturl,
-          isadmin: req.user.isadmin,          
-        }
-      }]
-    })
+          isadmin: req.user.isadmin,
+        },
+      }],
+    });
   }
 }
