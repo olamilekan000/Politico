@@ -70,7 +70,7 @@ export default class signUpUser {
       });
     } catch (e) {
       // statements
-      throw  e;
+      throw e;
     }
   }
 }

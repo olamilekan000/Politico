@@ -14,7 +14,7 @@ const hashPwd = async (pwd) => {
 const comparePwd = async (pwd, hshPwd) => {
   try {
     const response = await bcrypt.compare(pwd, hshPwd);
-    return response
+    return response;
   } catch (e) {
     throw e;
   }

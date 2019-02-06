@@ -6,6 +6,7 @@ import debug from 'debug';
 import dotenv from 'dotenv';
 import router from './server/routers';
 import './Passport';
+import './server/database';
 
 dotenv.config();
 

@@ -11,8 +11,8 @@ export default class Offices {
         res.status(400).json({
           error: 'Sorry, You need to enter details properly.',
         });
-        return
-      }      
+        return;
+      }
       const newCreatedOffice = [...ofiice, req.body];
       res.status(200).json({
         message: 'Political Office Successfully created',

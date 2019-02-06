@@ -10,7 +10,7 @@ export default class Parties {
         res.status(400).json({
           error: 'Sorry, You need to enter details properly.',
         });
-        return
+        return;
       }
       const newCreatedParties = [...parties, req.body];
       res.status(200).json({
@@ -40,12 +40,12 @@ export default class Parties {
 
   static editAParty(req, res) {
     const validateRes = validatePartiesInput(req, res);
-    console.log(validateRes)
+    console.log(validateRes);
     if (validateRes) {
       res.status(400).json({
         error: 'Sorry, You need to enter details properly.',
       });
-      return
+      return;
     }
     const { id } = req.params;
     let data = parties.find(element => element.id === parseInt(id, 10));
