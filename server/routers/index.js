@@ -5,6 +5,7 @@ import Offices from '../controllers/offices';
 import signUpUser from '../controllers/signup';
 import signInUser from '../controllers/signin';
 import RegisterCandidate from '../controllers/registerCandidate'
+import Petition from '../controllers/petition'
 
 import { checkHeader, checkIfUserOrAdmin } from '../helpers/checkHeader';
 
@@ -38,6 +39,9 @@ router.route('/auth/login')
   .post(passport.authenticate('local', { session: false }), signInUser.signin);
 
 router.route('/office/:user_id/register')
-  .post(passport.authenticate('jwt', { session: false }), RegisterCandidate.RegisterOffice);  
+  .post(passport.authenticate('jwt', { session: false }), RegisterCandidate.RegisterOffice); 
+
+router.route('/petitions')
+  .post(passport.authenticate('jwt', { session: false }), Petition.createPetition);   
 
 export default router;

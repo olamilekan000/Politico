@@ -19,6 +19,18 @@ const createTables = async () => {
 			)`,
 		})
 
+		// new Date().toDateString()
+		await pool.query({
+			text:`CREATE TABLE IF NOT EXISTS petitions(
+				id SERIAL,
+				createdOn TIMESTAMP ,
+				createdBy INTEGER,
+				office INTEGER,
+				body TEXT,
+				evidence TEXT []
+			)`,
+		})		
+
 		await pool.query({
 			text:`CREATE TABLE IF NOT EXISTS office(
 				office VARCHAR NOT NULL,

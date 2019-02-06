@@ -51,6 +51,7 @@ export default class signUpUser {
         idAdminBool,
         savedUser.rows[0].lastname,
         savedUser.rows[0].email,
+        savedUser.rows[0].id
       );
 
       await pool.end();

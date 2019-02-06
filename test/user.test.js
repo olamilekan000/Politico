@@ -48,13 +48,18 @@ const userReg =   {
 let token = ''
 let userID = ''
 
+const myPetition = {
+  createdBy : userID,
+  office : 1001 ,
+  body : "I want to craeate a petition... " ,
+  evidence: " I have all evidencies"
+
+}
+
 describe('/auth/signup User Registration', () => {
 
   before(async () => {
-    await createTables()
-    // const response = await chai.request(app).post(`${BASE_URL}/auth/login`).send(user)
-    // console.log()
-    // token = response.body.data[0].Token     
+    await createTables() 
   })
 
   describe('User Registration', () => {
@@ -114,7 +119,7 @@ describe('/auth/signup User Registration', () => {
             should.exist(res.body.data[0].user.phonenumber);
             should.exist(res.body.data[0].user.passporturl);
             should.exist(res.body.data[0].user.isadmin);
-            done()
+            done();
             token = res.body.data[0].Token
           })
       })
@@ -126,7 +131,7 @@ describe('/auth/signup User Registration', () => {
           .send(user2)
           .end((err, res) => {
             res.should.have.status(401);
-            done()
+            done();
           })
       })
 
@@ -137,14 +142,13 @@ describe('/auth/signup User Registration', () => {
           .send(user3)
           .end((err, res) => {
             res.should.have.status(401);
-            done()
+            done();
           })
       })          
     })
   }) 
 
   describe('/REGISTER Only an Admin can register a candidate', () => {
-
     it('checks if the admin can register a user for an office', (done) => {
       chai.request(app)
         .post(`${BASE_URL}office/${userID}/register`)
@@ -153,10 +157,31 @@ describe('/auth/signup User Registration', () => {
         .set('Authorization', token)
         .end((err, res) => {
           res.should.have.status(401);
+          res.type.should.equal('application/json')
           done();
         })
     })
+  })
 
+  describe('/PETITIONS A user can raise a pettion', () => {
+    it('User can make a petition', (done) => {
+      chai.request(app)
+        .post(`${BASE_URL}petitions`)
+        .send(myPetition)
+        .set('content-type', 'application/json')
+        .set('Authorization', token)
+        .end((err, res) => {
+          res.should.have.status(200);
+          res.type.should.equal('application/json')
+          should.exist(res.body.data.id);
+          should.exist(res.body.data.createdon);
+          should.exist(res.body.data.createdby);
+          should.exist(res.body.data.office);
+          should.exist(res.body.data.body);
+          should.exist(res.body.data.evidence);
+        })
+      done();
+    })
   })   
 
   after(async () => {
@@ -167,6 +192,5 @@ describe('/auth/signup User Registration', () => {
     } catch (e) {
       throw e;
     }
-    await deleteDatabase()
   });
 });
