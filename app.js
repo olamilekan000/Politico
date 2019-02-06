@@ -6,13 +6,8 @@ import debug from 'debug';
 import dotenv from 'dotenv';
 import router from './server/routers';
 import './Passport';
-import createTables from './server/database'
 
 dotenv.config();
-
-(async () => {
-	await createTables()
-})()
 
 const consoleLog = debug('app');
 const app = express();
