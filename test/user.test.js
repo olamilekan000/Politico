@@ -39,10 +39,21 @@ const user3 = {
     "password": "ola"
 };
 
+const userReg =   {
+  office: 1,
+  user: 69
+}
+
+let token = ''
+let userID = ''
+
 describe('/auth/signup User Registration', () => {
 
   before(async () => {
     await createTables()
+    // const response = await chai.request(app).post(`${BASE_URL}/auth/login`).send(user)
+    // console.log()
+    // token = response.body.data[0].Token     
   })
 
   describe('User Registration', () => {
@@ -63,6 +74,7 @@ describe('/auth/signup User Registration', () => {
           should.exist(res.body.user.passporturl);
           should.exist(res.body.user.isadmin);
           done();
+          userID = res.body.user.id
         });
     });
 
@@ -102,6 +114,7 @@ describe('/auth/signup User Registration', () => {
             should.exist(res.body.data[0].user.passporturl);
             should.exist(res.body.data[0].user.isadmin);
             done()
+            token = res.body.data[0].Token
           })
       })
 
@@ -127,7 +140,23 @@ describe('/auth/signup User Registration', () => {
           })
       })          
     })
-  })  
+  }) 
+
+  describe('/REGISTER Only an Admin can register a candidate', () => {
+
+    it('checks if the admin can register a user for an office', (done) => {
+      chai.request(app)
+        .post(`${BASE_URL}office/${userID}/register`)
+        .send(userReg)
+        .set('content-type', 'application/json')
+        .set('Authorization', token)
+        .end((err, res) => {
+          res.should.have.status(409);
+          done();
+        })
+    })
+
+  })   
 
   after(async () => {
     try {
