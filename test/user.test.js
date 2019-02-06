@@ -162,6 +162,7 @@ describe('/auth/signup User Registration', () => {
     try {
       const pool = new Pool();
       await pool.query(TestDbQuery.deleteUserWithEmail(user.email));
+      await pool.query(`DROP DATABASE politico`);
       await pool.end();
     } catch (e) {
       throw e;

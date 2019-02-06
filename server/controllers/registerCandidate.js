@@ -23,7 +23,7 @@ export default class RegisterCandidate {
 
 			const tokenFromHeader = req.get('Authorization');
 			const verified = jwt.verify(tokenFromHeader, 'secret');
-			if(verified.isadmin === 'Admin'){
+			if(verified.isadmin !== 'Admin'){
 				return res.status(401).json({
 					"error": "You are not authorized to perform this operation" 
 				})
