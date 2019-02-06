@@ -4,7 +4,7 @@ const token = (firstname, isAdmin, lastname, email) => jwt.sign({
   iss: 'Politico',
   sub: firstname,
   iat: new Date().getTime(),
-  exp: new Date().setDate(new Date().getDate() + 1),
+  expiresIn: new Date().setDate(new Date().getDate() + 10),
   role: isAdmin ? 'Admin' : 'user',
   firstname,
   lastname,

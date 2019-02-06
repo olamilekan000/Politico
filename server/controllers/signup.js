@@ -18,7 +18,6 @@ export default class signUpUser {
 
     const pool = new Pool();
 
-
     try {
       const queryUserIfExist = DbQuery.getUserWithEmail(email);
       const dbRes = await pool.query(queryUserIfExist);

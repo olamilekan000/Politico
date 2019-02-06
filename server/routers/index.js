@@ -2,6 +2,8 @@ import { Router } from 'express';
 import Parties from '../controllers';
 import Offices from '../controllers/offices';
 import signUpUser from '../controllers/signup';
+import signInUser from '../controllers/signin';
+import passport from 'passport';
 
 import { checkHeader, checkIfUserOrAdmin } from '../helpers/checkHeader';
 
@@ -30,5 +32,8 @@ router.route('/Offices/:id')
 
 router.route('/auth/signup')
   .post(signUpUser.register);
+
+router.route('/auth/login')
+  .post(passport.authenticate('local', { session: false }), signInUser.signin);  
 
 export default router;
