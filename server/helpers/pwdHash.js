@@ -14,9 +14,7 @@ const hashPwd = async (pwd) => {
 const comparePwd = async (pwd, hshPwd) => {
   try {
     const response = await bcrypt.compare(pwd, hshPwd);
-    if (response) {
-      console.log('right user');
-    }
+    return response
   } catch (e) {
     throw e;
   }
