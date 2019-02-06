@@ -5,7 +5,13 @@ export default class Parties {
   static createParty(req, res) {
     req.body.id = parties.length + 1;
     try {
-      validatePartiesInput(req, res);
+      const validateRes = validatePartiesInput(req, res);
+      if (validateRes) {
+        res.status(400).json({
+          error: 'Sorry, You need to enter details properly.',
+        });
+        return
+      }
       const newCreatedParties = [...parties, req.body];
       res.status(200).json({
         message: 'Political Party Successfully created',
@@ -33,29 +39,30 @@ export default class Parties {
   }
 
   static editAParty(req, res) {
-    try {
-      validatePartiesInput(req, res);
-      const { id } = req.params;
-      let data = parties.find(element => element.id === parseInt(id, 10));
-
-      if (data) {
-        data = req.body;
-        data.id = id;
-        res.status(200).json({
-          message: 'User Successfully Updated',
-          data,
-        });
-        return;
-      }
-
-      res.status(404).json({
-        error: 'The Political Party does not exist',
+    const validateRes = validatePartiesInput(req, res);
+    console.log(validateRes)
+    if (validateRes) {
+      res.status(400).json({
+        error: 'Sorry, You need to enter details properly.',
       });
-    } catch (e) {
-      res.status(500).json({
-        error: 'Sorry, Something is not right.',
-      });
+      return
     }
+    const { id } = req.params;
+    let data = parties.find(element => element.id === parseInt(id, 10));
+
+    if (data) {
+      data = req.body;
+      data.id = id;
+      res.status(200).json({
+        message: 'User Successfully Updated',
+        data,
+      });
+      return;
+    }
+
+    res.status(404).json({
+      error: 'The Political Party does not exist',
+    });
   }
 
   static deleteAParty(req, res) {

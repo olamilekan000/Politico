@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/olamilekan000/Politico#readme",
   "dependencies": {
+    "@babel/polyfill": "^7.2.5",
     "bcrypt": "^3.0.0",
     "body-parser": "^1.18.3",
     "debug": "^4.1.1",
