@@ -27,6 +27,13 @@ app.use(BASE_URL, router);
 
 const PORT = process.env.PORT || 8089;
 
+app.get('/', (req, res) => {
+	res.json({
+		status: 200,
+		"data": "Politico is live!"
+	})
+})
+
 app.listen(PORT, () => {
   console.log(`Now listening for requests on port ${PORT}`);
 });

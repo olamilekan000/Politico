@@ -2,6 +2,7 @@ import chai from 'chai';
 import chaiHttp from 'chai-http';
 import { Pool } from 'pg';
 import createTables from '../server/database'
+import deleteDatabase  from '../server/model/dropDb'
 
 import app from '../app';
 import TestDbQuery from './dbQuery';
@@ -151,7 +152,7 @@ describe('/auth/signup User Registration', () => {
         .set('content-type', 'application/json')
         .set('Authorization', token)
         .end((err, res) => {
-          res.should.have.status(409);
+          res.should.have.status(401);
           done();
         })
     })
@@ -162,10 +163,10 @@ describe('/auth/signup User Registration', () => {
     try {
       const pool = new Pool();
       await pool.query(TestDbQuery.deleteUserWithEmail(user.email));
-      await pool.query(`DROP DATABASE politico`);
       await pool.end();
     } catch (e) {
       throw e;
     }
+    await deleteDatabase()
   });
 });
