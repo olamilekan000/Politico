@@ -1,6 +1,7 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import { Pool } from 'pg';
+import createTables from '../server/database'
 
 import app from '../app';
 
@@ -28,6 +29,7 @@ describe('/REGISTER Only an Admin can register a candidate', () => {
 	before(async () => {
 		const response = await chai.request(app).post(`${BASE_URL}/auth/login`).send(userLoginDetails)
 		token = response.body.data[0].Token	
+		await createTables()
 	})
 
 	it('checks if the admin can register a user for an office', (done) => {

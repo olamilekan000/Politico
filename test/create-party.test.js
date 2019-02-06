@@ -1,6 +1,7 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import app from '../app';
+import createTables from '../server/database'
 
 import { correctParty, inCorrectParty1, inCorrectParty2 } from './mock-data/mock.party';
 
@@ -13,6 +14,9 @@ const AUTH = 'admin';
 const BASE_URL = '/api/v1';
 
 describe('/create_party ', () => {
+  before(async () => {
+    await createTables()
+  })  
   describe('create a political party', () => {
     it('creates a political party giving the correct data', (done) => {
       chai.request(app)

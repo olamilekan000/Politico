@@ -30,7 +30,6 @@ describe('/auth/signup User Registration', () => {
     await createTables()
   })
 
-
   describe('User Registration', () => {
     it('saves a user into the database', (done) => {
       chai.request(app)

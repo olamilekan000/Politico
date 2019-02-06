@@ -1,6 +1,7 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import { Pool } from 'pg';
+import createTables from '../server/database'
 
 import app from '../app';
 import TestDbQuery from './dbQuery';
@@ -28,6 +29,9 @@ const user3 = {
 const BASE_URL = '/api/v1/';
 
 describe('/auth/login User Log in', () => {
+	before(async () => {
+		await createTables()
+	})	
 	describe('a user logs in with the correct credentails', () => {
 		it('Checks if a user has all credentails for loggin in', (done) => {
 			chai.request(app)

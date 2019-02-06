@@ -7,6 +7,5 @@ services:
 
 before_script:
   - psql -c 'create database politico;' -U postgres
-
 after_success:
  - npm run coverage
