@@ -1,6 +1,7 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import { Pool } from 'pg';
+import createTables from '../server/database'
 
 import app from '../app';
 import TestDbQuery from './dbQuery';
@@ -24,6 +25,12 @@ const user = {
 const BASE_URL = '/api/v1/';
 
 describe('/auth/signup User Registration', () => {
+
+  before(async () => {
+    await createTables()
+  })
+
+
   describe('User Registration', () => {
     it('saves a user into the database', (done) => {
       chai.request(app)
