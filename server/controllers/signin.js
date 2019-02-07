@@ -1,4 +1,3 @@
-import { Pool } from 'pg';
 import token from '../helpers/jwt';
 import DbQuery from '../model';
 

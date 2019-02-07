@@ -13,7 +13,7 @@ const BASE_URL = '/api/v1';
 describe('/get-offices GET all offices', () => {
   before(async () => {
     await createTables()
-  })  
+  })
   describe('should get all offices with auth header user ', () => {
     it('gets all offices for an authorized user', (done) => {
       chai.request(app)
