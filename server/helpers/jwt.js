@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 
-const token = (firstname, isAdmin, lastname, email) => jwt.sign({
+const token = (firstname, isAdmin, lastname, email, id) => jwt.sign({
   iss: 'Politico',
   sub: firstname,
   iat: new Date().getTime(),
@@ -9,6 +9,7 @@ const token = (firstname, isAdmin, lastname, email) => jwt.sign({
   firstname,
   lastname,
   email,
+  id,
 }, 'secret');
 
 export default token;

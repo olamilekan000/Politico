@@ -14,7 +14,7 @@ const BASE_URL = '/api/v1';
 describe('Only an Admin and user can get an office ', () => {
   before(async () => {
     await createTables()
-  })  
+  })
   describe('Get an office', () => {
     it('gets a political office if the user is Admin', (done) => {
       chai.request(app)

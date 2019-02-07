@@ -19,9 +19,13 @@ passport.use(new JWTStrategy({
 		let dbRes = await pool.query(user);
 		await pool.end();
 		if(dbRes.rows[0]){
-			return done(null, dbRes.rows[0]);
+			return {
+				data: dbRes.rows[0]
+			}
 		}else{
-			return done(null, false);
+			return {
+				error: 'error extracting token'
+			}
 		}	
 
 	}catch(err){
@@ -38,7 +42,7 @@ passport.use(new LocalStrategy({
 		let dbRes = await pool.query(signedUser);
 		await pool.end();
 		if (!dbRes.rows[0]) {
-			return done(null, false, { message: 'Incorrect email.' });
+			return { message: 'Incorrect email.' }
 		}
 
 		// gets the logged in user hashed password
@@ -46,11 +50,11 @@ passport.use(new LocalStrategy({
 		// compare password with the user passport
 		const realUser = await comparePwd(password, hashedPwd);
 		if(!realUser){
-			return done(null, false, { message: 'Incorrect password.' });
+			return{ message: 'Incorrect password.' };
 
 		}		
 
-		return done(null, dbRes.rows[0]);
+		return dbRes.rows[0];
 	}catch(error){
 		return done(error);
 	}

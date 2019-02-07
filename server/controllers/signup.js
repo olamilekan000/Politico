@@ -1,4 +1,4 @@
-import { Pool } from 'pg';
+import pool from '../../config';
 import token from '../helpers/jwt';
 import DbQuery from '../model';
 
@@ -15,8 +15,6 @@ export default class signUpUser {
       passportUrl,
       isAdmin,
     } = req.body;
-
-    const pool = new Pool();
 
     try {
       const queryUserIfExist = DbQuery.getUserWithEmail(email);
@@ -51,9 +49,8 @@ export default class signUpUser {
         idAdminBool,
         savedUser.rows[0].lastname,
         savedUser.rows[0].email,
+        savedUser.rows[0].id,
       );
-
-      await pool.end();
       // return the user with the token
       return res.status(200).json({
         Token,
