@@ -4,7 +4,7 @@
   "description": "A political web portal",
   "main": "app.js",
   "scripts": {
-    "test": "SET ENV_TEST=test&& nyc --reporter=html --reporter=text mocha --require @babel/register test/*.js --exit",
+    "test": "SET ENV_TEST=test&& nyc --reporter=html --reporter=text mocha --timeout 15000 --require @babel/register --require @babel/polyfill test/*.js --exit",
     "start": "babel-node app.js",
     "lint": "eslint --fix app.js ./server ./test",
     "coverage": "nyc report --reporter=text-lcov | coveralls",

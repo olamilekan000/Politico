@@ -1,9 +1,7 @@
-import { Pool } from 'pg';
+import pool from '../../config'
 
 const deleteDatabase = async () => {
-  const pool = new Pool();
-  await pool.query({ text: 'DROP DATABASE politico' });
-  await pool.end();
+  await pool.query({ text: 'DROP TABLE users' });
 };
 
 export default deleteDatabase;

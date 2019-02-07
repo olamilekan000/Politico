@@ -7,12 +7,18 @@ import dotenv from 'dotenv';
 import router from './server/routers';
 import './Passport';
 import createTables from './server/database';
+import { Pool } from 'pg';
 
 dotenv.config();
 
 (async () => {
+	if(process.env.ENV_TEST == 'test'){
+		const pool = new Pool()
+		await pool.query({ text: 'DROP TABLE users' });
+	}	
   await createTables();
 })();
+
 
 const consoleLog = debug('app');
 const app = express();

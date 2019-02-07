@@ -33,7 +33,7 @@ const user = {
 
 const user2 = {
   email: 'chiz98@gmail.com',
-  password: 'secretlysecre t',
+  password: 'secretlyjhsecre t',
 };
 
 const user3 = {
@@ -65,10 +65,11 @@ const existingVoter = {
   candidate: 5056,
 };
 
-describe('Authentication OF USERS', (done) => {
-  before(async (done) => {
+describe('Authentication OF USERS', () => {
+
+  before(async () => {
+    await deleteDatabase()
     await createTables();
-    done();
   })
 
   describe('User signup', () => {
@@ -90,8 +91,9 @@ describe('Authentication OF USERS', (done) => {
           should.exist(res.body.user.isadmin);
           userID = res.body.user.id;
           token = res.body.Token;
-          done();
         }).timeout(10000);
+        done();
+    });
 
       it('Checks if a user has all credentails for loggin in', (done) => {
         chai.request(app)
@@ -111,8 +113,8 @@ describe('Authentication OF USERS', (done) => {
             should.exist(res.body.data[0].user.phonenumber);
             should.exist(res.body.data[0].user.passporturl);
             should.exist(res.body.data[0].user.isadmin);
-            done();
           });
+          done();
       });
 
       it('fails because an individual logs in with a wrong password', (done) => {
@@ -122,8 +124,8 @@ describe('Authentication OF USERS', (done) => {
           .send(user2)
           .end((err, res) => {
             res.should.have.status(401);
-            done();
           });
+          done();
       });
 
       it('fails because an individual logs in with a wrong password', (done) => {
@@ -136,10 +138,6 @@ describe('Authentication OF USERS', (done) => {
           });
         done();
       });
-    });
-
-
-
   });
 
 
@@ -168,7 +166,7 @@ describe('Authentication OF USERS', (done) => {
         .end((err, res) => {
           res.should.have.status(401);
         });
-      done();
+        done();
     });
   });
 
@@ -191,7 +189,7 @@ describe('Authentication OF USERS', (done) => {
           should.exist(res.body.data.office);
           should.exist(res.body.data.body);
         });
-      done();
+        done();
     });
   });
 
@@ -207,14 +205,10 @@ describe('Authentication OF USERS', (done) => {
           res.type.should.equal('application/json');
           should.exist(res.body.data.ofiice);
           should.exist(res.body.data.candidate);
-          should.exist(res.body.data.body);
+          should.exist(res.body.data.body);          
         });
-      done();
+        done();
     });
   });
 
-
-  after(async () => {
-    await pool.query(TestDbQuery.deleteUserWithEmail(user.email));
-  });
-});
+}).timeout(10000);
