@@ -13,7 +13,7 @@ const BASE_URL = '/api/v1';
 describe('/get-parties GET all parties', () => {
   before(async () => {
     await createTables()
-  })  
+  })
   describe('should get all parties with auth header user ', () => {
     it('gets all parties for an authorized user', (done) => {
       chai.request(app)

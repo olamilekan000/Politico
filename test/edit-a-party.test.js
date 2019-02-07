@@ -15,7 +15,7 @@ const BASE_URL = '/api/v1';
 describe('Only an Admin can edit a party ', () => {
   before(async () => {
     await createTables()
-  })  
+  })
   describe('A party can be edited', () => {
     it('edits a political party if the user is Admin', (done) => {
       chai.request(app)

@@ -14,7 +14,7 @@ const BASE_URL = '/api/v1';
 describe('Delete a party', () => {
   before(async () => {
     await createTables()
-  })  
+  })
   it('checks if an Admin can delete a party', (done) => {
     chai.request(app)
       .delete(`${BASE_URL}/parties/1`)

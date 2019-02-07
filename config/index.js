@@ -1,4 +1,6 @@
 import { Pool } from 'pg'
-const pool = new Pool()
+import dbconfig from './dbConfig'
+
+const pool = new Pool(dbconfig)
 
 export default pool

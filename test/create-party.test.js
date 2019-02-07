@@ -16,7 +16,7 @@ const BASE_URL = '/api/v1';
 describe('/create_party ', () => {
   before(async () => {
     await createTables()
-  })  
+  })
   describe('create a political party', () => {
     it('creates a political party giving the correct data', (done) => {
       chai.request(app)

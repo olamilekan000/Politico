@@ -9,7 +9,7 @@ const token = (firstname, isAdmin, lastname, email, id) => jwt.sign({
   firstname,
   lastname,
   email,
-  id
+  id,
 }, 'secret');
 
 export default token;
